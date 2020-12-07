@@ -39,7 +39,7 @@
     "vehicleRef": {
       "$id": "#/properties/vehicleRef",
       "type": "string",
-      "description": "Reference to the vehicle. 16-character VIN or 8 character number. Example: XYZ0123X0X0123456 or 123456"
+      "description": "Reference to the vehicle. 17-character VIN or 8 character number. Example: XYZ0123X0X0123456 or 123456"
     },
     "journeyPatternRef": {
       "$id": "#/properties/journeyPatternRef",
