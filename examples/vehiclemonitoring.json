@@ -7,7 +7,10 @@
   "quayRef": "NSR:Quay:123",
   "order": 1,
   "distanceMeter": 32.5,
-  "position": [10.7522, 59.9139],
+  "position": {
+    "type": "Point",
+    "coordinates": [10.7522, 59.9139]
+  },
   "delaySeconds": -10,
   "doorsOpen": false
 }
