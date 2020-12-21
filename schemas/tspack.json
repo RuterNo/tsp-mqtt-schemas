@@ -9,9 +9,11 @@
     "publishedTimestamp",
     "traceId",
     "vehicleRef",
-    "signalRef",
-    "signalName",
-    "signalPosition",
+    "line",
+    "journeyPatternRef",
+    "triggerPointRef",
+    "triggerPointName",
+    "triggerPointPosition",
     "priorityLevel"
   ],
   "additionalProperties": false,
@@ -38,30 +40,55 @@
       "type": "string",
       "description": "Reference to the vehicle. 17-character VIN or 6 character number. Example: XYZ0123X0X0123456 or 123456"
     },
-    "signalRef": {
-      "$id": "#/properties/signalRef",
+    "line": {
+      "$id": "#/properties/line",
+      "type": "string",
+      "description": "Line number. Example: 36E"
+    },
+    "journeyPatternRef": {
+      "$id": "#/properties/journeyPatternRef",
+      "type": "string",
+      "description": "Reference to the journey pattern the vehicle is currently driving. Example: RUT:JourneyPattern:123"
+    },
+    "triggerPointRef": {
+      "$id": "#/properties/triggerPointRef",
       "type": "string",
       "description": "Reference to the signal that was triggered"
     },
-    "signalName": {
-      "$id": "#/properties/name",
+    "triggerPointName": {
+      "$id": "#/properties/triggerPointName",
       "type": "string",
       "description": "Name of the signal/crossroads"
     },
-    "signalPosition": {
-      "$id": "#/properties/signalPosition",
-      "type": "array",
-      "description": "Coordinates of the signal that was triggered, as defined by GeoJson type Point: [longitude, latitude]",
-      "items": [
-        {
-          "type": "number",
-          "description": "longitude"
+    "triggerPointPosition": {
+      "$id": "#/properties/triggerPointPosition",
+      "type": "object",
+      "description": "Location of of the triggerPoint, GeoJSON geometry object, type Point, WGS84",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Point"
+          ]
         },
-        {
-          "type": "number",
-          "description": "latitude"
+        "coordinates": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number",
+              "description": "longitude"
+            },
+            {
+              "type": "number",
+              "description": "latitude"
+            }
+          ]
         }
-      ]
+      }
     },
     "priorityLevel": {
       "$id": "#/properties/priorityLevel",

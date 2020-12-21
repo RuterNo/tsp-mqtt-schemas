@@ -9,6 +9,7 @@
     "publishedTimestamp",
     "traceId",
     "vehicleRef",
+    "offJourney",
     "journeyPatternRef",
     "quayRef",
     "order",
@@ -41,6 +42,11 @@
       "type": "string",
       "description": "Reference to the vehicle. 17-character VIN or 8 character number. Example: XYZ0123X0X0123456 or 123456"
     },
+    "offJourney": {
+      "$id": "#/properties/offJourney",
+      "type": "boolean",
+      "description": "true if the vehicle is currently off the intended journey. In that case quayRef, distanceMeter, order and delaySeconds values will freeze"
+    },
     "journeyPatternRef": {
       "$id": "#/properties/journeyPatternRef",
       "type": "string",
@@ -58,18 +64,31 @@
     },
     "position": {
       "$id": "#/properties/position",
-      "type": "array",
-      "description": "cordinates of the vehicle, as defined by GeoJson type Point: [longitude, latitude]",
-      "items": [
-        {
-          "type": "number",
-          "description": "longitude"
+      "type": "object",
+      "description": "Location of of the vehicle, GeoJSON geometry object, type Point, WGS84",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["Point"]
         },
-        {
-          "type": "number",
-          "description": "latitude"
+        "coordinates": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number",
+              "description": "longitude"
+            },
+            {
+              "type": "number",
+              "description": "latitude"
+            }
+          ]
         }
-      ]
+      }
     },
     "distanceMeter": {
       "$id": "#/properties/distanceMeter",
