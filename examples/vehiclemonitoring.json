@@ -3,6 +3,7 @@
   "publishedTimestamp": "2019-10-15T09:06:15.285218Z",
   "traceId": "40634dfc-b8bc-44b5-9353-161ac0b0e80b",
   "vehicleRef": "XYZ0123X0X0123456",
+  "offJourney":false,
   "journeyPatternRef": "RUT:JourneyPattern:123",
   "quayRef": "NSR:Quay:123",
   "order": 1,

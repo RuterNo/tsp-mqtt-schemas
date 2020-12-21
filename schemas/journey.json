@@ -47,7 +47,7 @@
     "journeyPatternRef": {
       "$id": "#/properties/journeyPatternRef",
       "type": ["string", "null"],
-      "description": "Reference to the journey pattern. Example: RUT:JourneyPattern:123. null if offDuty"
+      "description": "Reference to the journey pattern the vehicle is currently driving. Example: RUT:JourneyPattern:123. null if offDuty"
     },
     "line": {
       "$id": "#/properties/line",
