@@ -66,10 +66,11 @@
       "items": {
         "$id": "#/properties/journeyPattern/link",
         "type": "object",
-        "description": "The order, quayRef and lineString of a stop",
+        "description": "The order, quayRef, distance and lineString of a stop",
         "required": [
           "order",
           "quayRef",
+          "distanceMeter",
           "lineString"
         ],
         "properties": {
@@ -83,6 +84,11 @@
             "$id": "#/properties/journeyPattern/Link/quayRef",
             "type": "string",
             "description": "Reference to the quay of the stop"
+          },
+          "distanceMeter": {
+            "$id": "#/properties/journeyPattern/Link/distanceMeter",
+            "type": "number",
+            "description": "The distance the vehicle intend to drive towards this stop"
           },
           "lineString": {
             "$id": "#/properties/journeyPattern/Link/lineString",
