@@ -1,1 +1,1 @@
-# TSP schemas version 0.9
+# TSP schemas version 1.0
